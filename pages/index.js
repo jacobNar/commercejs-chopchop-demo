@@ -17,7 +17,7 @@ export async function getStaticProps() {
       products,
     },
     revalidate: 60,
-  };
+  }; 
 }
 
 function IndexPage({ products }) {
