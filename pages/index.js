@@ -43,7 +43,7 @@ function IndexPage({ products }) {
               }}
               exit={{ opacity: 0, y: -50 }}
             >
-              <h1 className="font-serif italic text-xl md:text-3xl">Shop:</h1>
+              <h1 className="font-serif italic text-xl md:text-3xl">Butikk:</h1>
 
               <div className="pt-3">
                 <ProductList products={products} />

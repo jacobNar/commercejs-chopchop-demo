@@ -7,7 +7,7 @@ function CartSummary() {
 
   return (
     <button className="appearance-none focus:outline-none" onClick={openModal}>
-      Shopping Bag ({total_unique_items})
+      Handlekurv ({total_unique_items})
     </button>
   );
 }

@@ -48,7 +48,6 @@ function MyApp({ Component, pageProps, router }) {
       <Head>
         <meta
           name="description"
-          content="Fine tools for thoughtful cooks"
         ></meta>
       </Head>
       <Elements
@@ -71,7 +70,6 @@ function MyApp({ Component, pageProps, router }) {
                   <AnimatePresence initial={false} exitBeforeEnter>
                     <Component {...pageProps} key={router.route} />
                   </AnimatePresence>
-                  <ToastContainer {...toastOptions} />
                 </Layout>
               </CheckoutProvider>
             </CartProvider>
