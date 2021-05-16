@@ -24,7 +24,7 @@ function IndexPage({ products }) {
   return (
     <>
       <Head>
-        <title>ChopChop</title>
+        <title>CaravanOutlet</title>
       </Head>
       <div className="md:min-h-screen md:flex md:items-center">
         <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-10">
