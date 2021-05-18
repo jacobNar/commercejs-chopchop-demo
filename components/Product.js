@@ -9,7 +9,7 @@ function Product({ media, name, permalink, price, className }) {
   ]);
 
   return (
-    <Link href={`/products/${permalink}`}>
+    <Link href={`/produkter/${permalink}`}>
       <a className="group relative">
         {media?.source && (
           <div className={imageClass}>

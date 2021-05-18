@@ -6,7 +6,7 @@ function ProductList({ products }) {
   return products.map(({ name, permalink }, index) => (
     <span key={permalink}>
       {index ? ", " : ""}
-      <Link href={`/products/${permalink}`}>
+      <Link href={`/produkter/${permalink}`}>
         <a className="text-lg md:text-xl lg:text-2xl hover:italic">{name}</a>
       </Link>
     </span>

@@ -150,7 +150,7 @@ function ProductPage({ product }) {
                   />
                 </div>
 
-                <Button onClick={addToCart}>Add to Bag</Button>
+                <Button onClick={addToCart}>Legg i handlekurv</Button>
               </div>
 
               <div
