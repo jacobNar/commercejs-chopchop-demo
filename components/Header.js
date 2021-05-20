@@ -10,10 +10,6 @@ function Header() {
           <a title="Return to store">Butikk</a>
         </Link>
         <span className="pr-1">,</span>
-        <Link href="/kategorier">
-          <a title="Til kategorisiden">Kategorier</a>
-        </Link>
-        <span className="pr-1">,</span>
         <CartSummary />
       </div>
     </header>
