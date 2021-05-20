@@ -56,7 +56,7 @@ function MyApp({ Component, pageProps, router }) {
           fonts: [
             {
               cssSrc:
-                "https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap",
+                "https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap",
             },
           ],
         }}
