@@ -131,7 +131,7 @@ function ProductPage({ product }) {
               }}
               exit={{ opacity: 0, y: -50 }}
             >
-              <h1 className="font-serif font-medium italic text-2xl md:text-4xl lg:text-5xl">
+              <h1 className="font-medium text-2xl md:text-4xl lg:text-5xl">
                 {product.name}
               </h1>
 
