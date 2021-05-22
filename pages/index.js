@@ -6,21 +6,22 @@ import { commerce } from "../lib/commerce";
 import Header from "../components/Header";
 import ProductList from "../components/ProductList";
 import ProductGrid from "../components/ProductGrid";
+import CategoryList from "../components/CategoryList";
 
 export async function getStaticProps() {
-  const { data } = await commerce.products.list();
-
-  const products = data.filter(({ active }) => active);
+  const { data: products } = await commerce.products.list();
+  const { data: categories } = await commerce.categories.list();
 
   return {
     props: {
       products,
+      categories,
     },
     revalidate: 60,
   }; 
 }
 
-function IndexPage({ products }) {
+function IndexPage({ products, categories }) {
   return (
     <>
       <Head>
@@ -46,7 +47,7 @@ function IndexPage({ products }) {
               <h1 className=" text-xl md:text-3xl">Butikk:</h1>
 
               <div className="pt-3">
-                <ProductList products={products} />
+                <CategoryList categories={categories} />
               </div>
             </motion.div>
           </div>

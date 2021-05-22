@@ -1,11 +1,17 @@
 import React from 'react'
 
-function CategoryPage() {
+export default function CategoryList({ categories }) {
+    if (!categories) return null;
+  
     return (
-        <div>
-            
-        </div>
-    )
-}
-
-export default CategoryPage
+      <ul>
+        {categories.map((category) => (
+          <li key={category.slug}>
+            <Link href={`/kategorier/${category.slug}`}>
+              <a>{category.name}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    );
+  }
