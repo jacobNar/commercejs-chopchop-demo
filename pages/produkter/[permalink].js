@@ -14,6 +14,7 @@ import VariantPicker from "../../components/VariantPicker";
 import ProductImages from "../../components/ProductImages";
 import ProductAttributes from "../../components/ProductAttributes";
 import RelatedProducts from "../../components/RelatedProducts";
+import { Alert } from '@material-ui/lab';
 
 export async function getStaticProps({ params }) {
   const { permalink } = params;
@@ -31,10 +32,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const { data: products } = await commerce.products.list({
-    limit: 200
-  });
-  console.log(products)
+  const { data: products } = await commerce.products.list();
 
   return {
     paths: products.map(({ permalink }) => ({
@@ -137,6 +135,22 @@ function ProductPage({ product }) {
               <h1 className="font-medium text-2xl md:text-4xl lg:text-5xl">
                 {product.name}
               </h1>
+              <div alignItems="center" container>
+                    <div item xs={6}>
+                      Lager
+                    </div>
+                    <div item xs={6}>
+                      {product.quantity > 0 ? (
+                        <Alert icon={false} severity="success">
+                          In Stock
+                        </Alert>
+                      ) : (
+                        <Alert icon={false} severity="error">
+                          Unavailable
+                        </Alert>
+                      )}
+                    </div>
+                  </div>
 
               <div className="flex items-center justify-between pt-3">
                 <div className="flex items-center">
