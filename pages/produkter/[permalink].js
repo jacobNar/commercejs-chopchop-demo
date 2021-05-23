@@ -32,7 +32,7 @@ export async function getStaticProps({ params }) {
 
 export async function getStaticPaths() {
   const { data: products } = await commerce.products.list({
-    limit: 200
+    limit: 100
   });
 
   return {
