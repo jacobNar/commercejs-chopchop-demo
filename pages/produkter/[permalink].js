@@ -137,18 +137,21 @@ function ProductPage({ product }) {
               </h1>
               <div alignItems="center" container>
                     <div item xs={6}>
-                      Lager
+                      Lager                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
                     </div>
                     <div item xs={6}>
                       {product.quantity > 0 ? (
                         <Alert icon={false} severity="success">
-                          In Stock
+                          I lager
                         </Alert>
                       ) : (
                         <Alert icon={false} severity="error">
-                          Unavailable
+                          Utiljengelig
                         </Alert>
                       )}
+                    </div>
+                    <div>
+                      {product.quantity}
                     </div>
                   </div>
 
