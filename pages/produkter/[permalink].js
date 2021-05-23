@@ -34,6 +34,7 @@ export async function getStaticPaths() {
   const { data: products } = await commerce.products.list({
     limit: 200
   });
+  console.log(products)
 
   return {
     paths: products.map(({ permalink }) => ({
