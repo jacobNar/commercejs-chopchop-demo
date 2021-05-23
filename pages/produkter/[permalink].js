@@ -20,7 +20,6 @@ export async function getStaticProps({ params }) {
 
   const product = await commerce.products.retrieve(permalink, {
     type: "permalink",
-    limit: 200,
   });
 
   return {
@@ -32,7 +31,9 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const { data: products } = await commerce.products.list();
+  const { data: products } = await commerce.products.list({
+    limit: 200
+  });
 
   return {
     paths: products.map(({ permalink }) => ({
