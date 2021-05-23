@@ -92,7 +92,7 @@ function ProductPage({ product }) {
       })
       .then(({ subtotal }) =>
         toast(
-          `${product.name} is now in your cart. Total-prisen din er nå ${subtotal.formatted_with_symbol}. Click for å se hva som er i handlekurven din.`,
+          `${product.name} Er i handlekurven din. Total-prisen din er nå ${subtotal.formatted_with_symbol}. Click for å se hva som er i handlekurven din.`,
           {
             onClick: openModal,
           }
