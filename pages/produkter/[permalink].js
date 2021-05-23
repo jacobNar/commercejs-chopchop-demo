@@ -20,6 +20,7 @@ export async function getStaticProps({ params }) {
 
   const product = await commerce.products.retrieve(permalink, {
     type: "permalink",
+    limit: 200,
   });
 
   return {
