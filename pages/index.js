@@ -10,7 +10,7 @@ import CategoryList from "../components/CategoryList";
 
 export async function getStaticProps() {
   const { data: products } = await commerce.products.list({
-    limit: 200,
+    limit: 5,
   });
   const { data: categories } = await commerce.categories.list();
 
@@ -29,11 +29,15 @@ function IndexPage({ products, categories }) {
       <Head>
         <title>CaravanOutlet</title>
       </Head>
+      <Header />
       <div className="md:min-h-screen md:flex md:items-center">
         <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-10">
           <div className="md:max-h-screen md:w-1/2 flex items-end justify-between md:sticky md:top-0">
-            <Header />
 
+
+            <div>
+
+            </div>
             <motion.div
               className="md:py-12 hidden md:block md:sticky md:top-0"
               initial={{ opacity: 0, y: 50 }}
@@ -46,16 +50,15 @@ function IndexPage({ products, categories }) {
               }}
               exit={{ opacity: 0, y: -50 }}
             >
-              <h1 className=" text-xl md:text-3xl">Butikk:</h1>
+              <h1>Butikk:</h1>
 
-              <div className="pt-3">
+              <div>
                 <CategoryList categories={categories} />
               </div>
             </motion.div>
           </div>
 
           <motion.div
-            className="md:min-h-screen py-6 md:py-12 flex items-center md:w-1/2 md:z-40"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}

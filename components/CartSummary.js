@@ -6,7 +6,7 @@ function CartSummary() {
   const { openModal } = useModalDispatch();
 
   return (
-    <button className="appearance-none focus:outline-none" onClick={openModal}>
+    <button onClick={openModal}>
       Handlekurv ({total_unique_items})
     </button>
   );
