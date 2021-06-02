@@ -120,56 +120,40 @@ function ProductPage({ product }) {
             <div className="hidden md:block">
               <Header />
             </div>
-            <div
+            <motion.div
               className="py-6 md:py-12 sticky top-0"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  delay: 0.25,
+                },
               }}
               exit={{ opacity: 0, y: -50 }}
             >
               <h1 className="font-medium text-2xl md:text-4xl lg:text-5xl">
                 {product.name}
               </h1>
-              <ListItem>
-                  <Grid alignItems="center" container>
-                    <Grid item xs={6}>
-                      Status
-                    </Grid>
-                    <Grid item xs={6}>
+              <div alignItems="center" container>
+                    <div item xs={6}>
+                      Lager                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+                    </div>
+                    <div item xs={6}>
                       {product.quantity > 0 ? (
                         <Alert icon={false} severity="success">
-                          In Stock
+                          I lager
                         </Alert>
                       ) : (
                         <Alert icon={false} severity="error">
-                          Unavailable
+                          Utiljengelig
                         </Alert>
                       )}
-                    </Grid>
-                  </Grid>
-                </ListItem>
-                {product.quantity > 0 && (
-                  <>
-                    <ListItem>
-                      <Grid container justify="flex-end">
-                        <Grid item xs={6}>
-                          Quantity
-                        </Grid>
-                        <Grid item xs={6}>
-                          <Select
-                            labelId="quanitity-label"
-                            id="quanitity"
-                            fullWidth
-                            onChange={(e) => setQuantity(e.target.value)}
-                            value={quantity}
-                          >
-                            {[...Array(product.quantity).keys()].map((x) => (
-                              <MenuItem key={x + 1} value={x + 1}>
-                                {x + 1}
-                              </MenuItem>
-                            ))}
-                          </Select>
-                        </Grid>
-                      </Grid>
-                    </ListItem>
+                    </div>
+                    <div>
+                      {product.quantity}
+                    </div>
+                  </div>
 
               <div className="flex items-center justify-between pt-3">
                 <div className="flex items-center">
@@ -193,7 +177,7 @@ function ProductPage({ product }) {
                 className="pt-5 md:pt-8 lg:pt-10 md:leading-relaxed lg:leading-loose lg:text-lg"
                 dangerouslySetInnerHTML={{ __html: product.description }}
               />
-            </div>
+            </motion.div>
           </div>
 
           <div className="md:min-h-screen md:py-12 flex items-center md:w-1/2 md:z-40">
