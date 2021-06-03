@@ -26,7 +26,6 @@ export async function getStaticProps({ params }) {
   return {
     props: {
       product,
-      inventory,
     },
     revalidate: 60,
   };
@@ -45,7 +44,7 @@ export async function getStaticPaths() {
   };
 }
 
-function ProductPage({ product, inventory }) {
+function ProductPage({ product }) {
   const { setCart } = useCartDispatch();
   const {
     variant_groups: variantGroups,
