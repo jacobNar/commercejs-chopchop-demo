@@ -2,6 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import { toast } from "react-toastify";
+import { useState } from "react";
 
 import { commerce } from "../../lib/commerce";
 import { useCartDispatch } from "../../context/cart";
@@ -46,6 +47,7 @@ export async function getStaticPaths() {
 
 function ProductPage({ product }) {
   const { setCart } = useCartDispatch();
+  const [quantity, setQuantity] = useState(1);
   const {
     variant_groups: variantGroups,
     assets,
@@ -137,23 +139,26 @@ function ProductPage({ product }) {
                 {product.name}
               </h1>
               <div alignItems="center" container>
-                    <div item xs={6}>
-                      Lager                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
-                    </div>
-                    <div item xs={6}>
-                      {product.quantity > 0 ? (
-                        <Alert icon={false} severity="success">
-                          I lager
-                        </Alert>
-                      ) : (
-                        <Alert icon={false} severity="error">
-                          Utiljengelig
-                        </Alert>
-                      )}
-                    </div>
-                    <div>
-                      {product.quantity}
-                    </div>
+              <div container justify="flex-end">
+                        <div item xs={6}>
+                          Lager
+                        </div>
+                        <div item xs={6}>
+                          <div
+                            labelId="quanitity-label"
+                            id="quanitity"
+                            fullWidth
+                            onChange={(e) => setQuantity(e.target.value)}
+                            value={quantity}
+                          >
+                            {[...Array(product.quantity).keys()].map((x) => (
+                              <div key={x + 1} value={x + 1}>
+                                {x + 1}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                   </div>
 
               <div className="flex items-center justify-between pt-3">
@@ -193,26 +198,7 @@ function ProductPage({ product }) {
           </div>
         </div>
         <div>
-                      <div container justify="flex-end">
-                        <div item xs={6}>
-                          Quantity
-                        </div>
-                        <div item xs={6}>
-                          <div
-                            labelId="quanitity-label"
-                            id="quanitity"
-                            fullWidth
-                            onChange={(e) => setQuantity(e.target.value)}
-                            value={quantity}
-                          >
-                            {[...Array(product.quantity).keys()].map((x) => (
-                              <div key={x + 1} value={x + 1}>
-                                {x + 1}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
+
                     </div>
       </div>
 
