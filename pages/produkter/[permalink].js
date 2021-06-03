@@ -102,6 +102,7 @@ function ProductPage({ product }) {
       .catch(() => {
         toast.error("Please try again.");
       });
+    
 
   return (
     <React.Fragment>
@@ -191,6 +192,28 @@ function ProductPage({ product }) {
             </motion.div>
           </div>
         </div>
+        <div>
+                      <div container justify="flex-end">
+                        <div item xs={6}>
+                          Quantity
+                        </div>
+                        <div item xs={6}>
+                          <div
+                            labelId="quanitity-label"
+                            id="quanitity"
+                            fullWidth
+                            onChange={(e) => setQuantity(e.target.value)}
+                            value={quantity}
+                          >
+                            {[...Array(product.quantity).keys()].map((x) => (
+                              <div key={x + 1} value={x + 1}>
+                                {x + 1}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
       </div>
 
       <div className="py-3 md:py-4 lg:py-8">
