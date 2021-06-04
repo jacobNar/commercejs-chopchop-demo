@@ -24,9 +24,6 @@ function Success({ has }) {
               layout="responsive"
             />
           </div>
-
-          <div className="p-4 pt-0 -mt-4 leading-tight font-sans">
-            <p>...if it did, we'd offer you a <span className="font-serif italic">100% real store credit</span>, but since it doesn't, we'd love for you to check out <a href="https://commercejs.com" target="_blank" rel="noopener nofollow" className="font-serif italic underline">commercejs.com</a> and <a href="https://github.com/chec/commercejs-chopchop-demo" target="_blank" rel="noopener nofollow" className="font-serif italic underline">the repo</a> for this store instead.</p>
             <div className="mt-6 mb-1 font-serif flex justify-between items-end">
               <Image
                 src="/product-attributes/thanks.svg"
@@ -39,7 +36,6 @@ function Success({ has }) {
           </div>
         </div>
       </div>
-    </div>
   );
 }
 

@@ -25,14 +25,14 @@ export default function Cart() {
           <>
             <div className="text-lg md:text-xl">
               Total: {subtotal?.formatted_with_symbol}, {total_unique_items}{" "}
-              {total_unique_items === 1 ? "item" : "items"}
+              {total_unique_items === 1 ? "produkt" : "produkter"}
             </div>
             <div>
               <Button
                 className="appearance-none leading-none p-1 md:p-1.5 lg:px-3.5 text-lg md:text-xl"
                 onClick={showCheckout}
               >
-                Check Out
+                Gå til betaling
               </Button>
             </div>
           </>

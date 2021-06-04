@@ -46,7 +46,7 @@ function Modal() {
     <AnimatePresence>
       {open && (
         <motion.div
-          className="bg-ecru-white z-50 fixed overflow-scroll inset-0"
+          className="bg-white z-50 fixed overflow-scroll inset-0"
           initial={{ opacity: 0, y: -50 }}
           animate={{
             opacity: 1,
@@ -63,7 +63,7 @@ function Modal() {
                   className="appearance-none leading-none text-black p-1 -mr-1 focus:outline-none"
                   onClick={closeAndResetModal}
                 >
-                  Close
+                  Lukk
                 </button>
               </div>
             </div>

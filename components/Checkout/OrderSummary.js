@@ -37,7 +37,7 @@ function CheckoutSummary({ has, fulfillment, order }) {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Download {name}
+                   Last ned {name}
                   </Button>
                 ))}
               </div>

@@ -81,7 +81,7 @@ function CartItem({ id, media, name, quantity, line_total, selected_options }) {
           </div>
           <div className="w-full flex md:flex-col items-center md:items-end justify-between">
             <div className="md:pb-4 lg:pb-5 inline-flex items-center">
-              <span className="pr-2">Quantity:</span>
+              <span className="pr-2">Mengde:</span>
               <button
                 onClick={decrementQuantity}
                 className="appearance-none inline-flex items-center justify-center rounded-lg border border-black w-5 h-5 text-xs text-black focus:outline-none hover:bg-black hover:text-white transition"
@@ -101,7 +101,7 @@ function CartItem({ id, media, name, quantity, line_total, selected_options }) {
                 onClick={handleRemoveItem}
                 className="appearance-none inline-flex items-center justify-center rounded-lg border border-black text-xs text-black px-1 h-5 opacity-50 hover:opacity-100 focus:opacity-100 focus:outline-none transition"
               >
-                Remove
+                Fjern fra handlekurv
               </button>
             </div>
           </div>
