@@ -35,6 +35,7 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const { data: products } = await commerce.products.list();
 
+
   return {
     paths: products.map(({ permalink }) => ({
       params: {
@@ -47,7 +48,6 @@ export async function getStaticPaths() {
 
 function ProductPage({ product }) {
   const { setCart } = useCartDispatch();
-  const [quantity, setQuantity] = useState(1);
   const {
     variant_groups: variantGroups,
     assets,
@@ -138,28 +138,7 @@ function ProductPage({ product }) {
               <h1 className="font-medium text-2xl md:text-4xl lg:text-5xl">
                 {product.name}
               </h1>
-              <div alignItems="center" container>
-              <div container justify="flex-end">
-                        <div item xs={6}>
-                          Lager
-                        </div>
-                        <div item xs={6}>
-                          <div
-                            labelId="quanitity-label"
-                            id="quanitity"
-                            fullWidth
-                            onChange={(e) => setQuantity(e.target.value)}
-                            value={quantity}
-                          >
-                            {[...Array(product.quantity).keys()].map((x) => (
-                              <div key={x + 1} value={x + 1}>
-                                {x + 1}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                  </div>
+
 
               <div className="flex items-center justify-between pt-3">
                 <div className="flex items-center">
@@ -168,16 +147,19 @@ function ProductPage({ product }) {
                       {product.price.formatted_with_symbol}
                     </p>
                   </div>
-
                   <VariantPicker
                     variantGroups={variantGroups}
                     defaultValues={initialVariants}
                     onChange={handleVariantChange}
                   />
                 </div>
-
                 <Button onClick={addToCart}>Legg i handlekurv</Button>
               </div>
+              <div className="text-2xl"> 
+                <h2> {product.inventory.available} producter i lager</h2>
+              </div>
+
+
 
               <div
                 className="pt-5 md:pt-8 lg:pt-10 md:leading-relaxed lg:leading-loose lg:text-lg"
@@ -185,6 +167,7 @@ function ProductPage({ product }) {
               />
             </motion.div>
           </div>
+          
 
           <div className="md:min-h-screen md:py-12 flex items-center md:w-1/2 md:z-40">
             <motion.div
@@ -197,9 +180,10 @@ function ProductPage({ product }) {
             </motion.div>
           </div>
         </div>
+        
         <div>
 
-                    </div>
+          </div>
       </div>
 
       <div className="py-3 md:py-4 lg:py-8">
