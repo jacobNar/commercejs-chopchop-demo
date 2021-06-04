@@ -20,7 +20,7 @@ export default function Cart() {
 
       <div className="flex items-center justify-between py-3 md:py-4 lg:py-5">
         {isEmpty ? (
-          <p>Your cart is empty.</p>
+          <p>Handlekurven din er tom.</p>
         ) : (
           <>
             <div className="text-lg md:text-xl">
