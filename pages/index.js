@@ -10,12 +10,14 @@ import CategoryList from "../components/CategoryList";
 
 export async function getStaticProps() {
   const { data: products } = await commerce.products.list({
-    limit: 6,
+    limit: 5,
   });
   const { data: categories } = await commerce.categories.list();
+  const merchant = await commerce.merchants.about();
 
   return {
     props: {
+      merchant,
       products,
       categories,
     },
@@ -23,7 +25,7 @@ export async function getStaticProps() {
   }; 
 }
 
-function IndexPage({ products, categories }) {
+function IndexPage({ products, categories, merchant }) {
   return (
     <>
       <Head>
@@ -50,10 +52,15 @@ function IndexPage({ products, categories }) {
               }}
               exit={{ opacity: 0, y: -50 }}
             >
-              <h1>Butikk:</h1>
-
               <div>
-                <CategoryList categories={categories} />
+                {merchant.business_description}
+              </div>
+              <div>
+                <h1>Butikk:</h1>
+
+                <div>
+                  <CategoryList categories={categories} />
+                </div>
               </div>
             </motion.div>
           </div>
