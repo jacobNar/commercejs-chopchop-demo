@@ -156,7 +156,7 @@ function ProductPage({ product }) {
                 <Button onClick={addToCart}>Legg i handlekurv</Button>
               </div>
               <div className="text-2xl"> 
-                <h2> {product.inventory.available} producter i lager</h2>
+                <h2> {product.inventory.available} produkter i lager</h2>
               </div>
 
 
