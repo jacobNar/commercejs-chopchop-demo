@@ -49,9 +49,13 @@ function IndexPage({ products, categories, merchant }) {
             >
 
               <div>
-                <h1>Butikk:</h1>
+                
 
                 <div>
+                <div className="text-lg md:text-l lg:text-2xl">
+                  {merchant.business_description}
+              </div>
+              <h1 className="text-lg md:text-xl lg:text-4xl">Produktkategorier:</h1>
                   <CategoryList categories={categories} />
                 </div>
               </div>
@@ -63,6 +67,7 @@ function IndexPage({ products, categories, merchant }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}
           >
+            
             <ProductGrid
               products={products}
               className="h-112 md:h-96 xl:h-112"
