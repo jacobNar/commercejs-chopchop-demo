@@ -35,11 +35,6 @@ function IndexPage({ products, categories, merchant }) {
       <div className="md:min-h-screen md:flex md:items-center">
         <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-10">
           <div className="md:max-h-screen md:w-1/2 flex items-end justify-between md:sticky md:top-0">
-
-
-            <div>
-
-            </div>
             <motion.div
               className="md:py-12 hidden md:block md:sticky md:top-0"
               initial={{ opacity: 0, y: 50 }}
@@ -52,9 +47,7 @@ function IndexPage({ products, categories, merchant }) {
               }}
               exit={{ opacity: 0, y: -50 }}
             >
-              <div>
-                {merchant.business_description}
-              </div>
+
               <div>
                 <h1>Butikk:</h1>
 
