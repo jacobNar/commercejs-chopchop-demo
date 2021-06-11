@@ -52,26 +52,6 @@ function AddressFields({ prefix = "", countries = {}, subdivisions = {} }) {
 
       <div className="md:flex md:items-start md:space-x-4">
         <div className="md:w-1/3">
-          <FormSelect
-            label="Country"
-            name={`${prefix}.country`}
-            options={formattedCountries}
-            placeholder="Select country"
-            required
-            disabled={formattedCountries.length === 0}
-          />
-        </div>
-        <div className="md:w-1/3">
-          <FormSelect
-            label="County / State"
-            name={`${prefix}.region`}
-            options={formattedSubdivisions}
-            placeholder="Select region"
-            required
-            disabled={formattedSubdivisions.length === 0}
-          />
-        </div>
-        <div className="md:w-1/3">
           <FormInput
             label="ZIP / Postcode"
             name={`${prefix}.postal_zip_code`}
