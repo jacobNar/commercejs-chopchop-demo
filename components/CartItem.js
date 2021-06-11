@@ -62,7 +62,7 @@ function CartItem({ id, media, name, quantity, line_total, selected_options }) {
       </div>
       <div className="flex flex-col md:flex-row md:items-end flex-grow">
         <div className="md:flex-grow">
-          <p className="font-serif text-xl md:text-2xl lg:text-3xl italic leading-none">
+          <p className=" text-xl md:text-2xl lg:text-3xl leading-none">
             {name}
           </p>
           {hasVariants && (
