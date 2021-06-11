@@ -18,7 +18,7 @@ function CheckoutSummary({ has, fulfillment, order }) {
             {total && (
               <li className="text-lg md:text-xl py-3">
                 Total: {total.formatted_with_symbol}, {count}{" "}
-                {count === 1 ? "item" : "items"}
+                {count === 1 ? "produkt" : "produkter"}
               </li>
             )}
           </ol>
