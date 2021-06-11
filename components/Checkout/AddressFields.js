@@ -21,32 +21,32 @@ function AddressFields({ prefix = "", countries = {}, subdivisions = {} }) {
       <div className="md:flex md:items-start md:space-x-4">
         <div className="md:w-1/2">
           <FormInput
-            label="First name"
+            label="Fornavn"
             name={`${prefix}.firstname`}
-            placeholder="First name"
+            placeholder="Fornavn"
             required
           />
         </div>
         <div className="md:w-1/2">
           <FormInput
-            label="Last name"
+            label="Etternavn"
             name={`${prefix}.lastname`}
-            placeholder="Last name"
+            placeholder="Etternavn"
             required
           />
         </div>
       </div>
 
       <FormInput
-        label="Address"
+        label="Addresse"
         name={`${prefix}.street`}
-        placeholder="Address"
+        placeholder="Addresse"
         required
       />
       <FormInput
-        label="Town / City"
+        label="By"
         name={`${prefix}.town_city`}
-        placeholder="City"
+        placeholder="By"
         required
       />
 
@@ -62,10 +62,10 @@ function AddressFields({ prefix = "", countries = {}, subdivisions = {} }) {
         </div>
         <div className="md:w-1/3">
           <FormSelect
-            label="County / State"
+            label="Fylke"
             name={`${prefix}.region`}
             options={formattedSubdivisions}
-            placeholder="Select region"
+            placeholder="Velg fylke"
             disabled={formattedSubdivisions.length === 0}
           />
         </div>
