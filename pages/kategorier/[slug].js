@@ -56,6 +56,10 @@ export default function CategoryPage({ category, products }) {
               }}
               exit={{ opacity: 0, y: -50 }}
             >
+              <div className="text-lg md:text-l lg:text-2xl">
+              {category.description}
+              </div>
+
             </motion.div>
           </div>
 

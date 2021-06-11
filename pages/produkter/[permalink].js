@@ -138,8 +138,6 @@ function ProductPage({ product }) {
               <h1 className="font-medium text-2xl md:text-4xl lg:text-5xl">
                 {product.name}
               </h1>
-
-
               <div className="flex items-center justify-between pt-3">
                 <div className="flex items-center">
                   <div className="pr-2">
@@ -180,10 +178,6 @@ function ProductPage({ product }) {
             </motion.div>
           </div>
         </div>
-        
-        <div>
-
-          </div>
       </div>
 
       <div className="py-3 md:py-4 lg:py-8">
