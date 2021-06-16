@@ -15,7 +15,6 @@ import VariantPicker from "../../components/VariantPicker";
 import ProductImages from "../../components/ProductImages";
 import ProductAttributes from "../../components/ProductAttributes";
 import RelatedProducts from "../../components/RelatedProducts";
-import { Alert } from '@material-ui/lab';
 
 export async function getStaticProps({ params }) {
   const { permalink } = params;
