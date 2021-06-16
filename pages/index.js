@@ -29,7 +29,7 @@ function IndexPage({ products, categories, merchant }) {
   return (
     <>
       <Head>
-        <title>CaravanOutlet</title>
+        <title>CaravanOutletVest</title>
       </Head>
       <Header />
       <div className="md:min-h-screen md:flex md:items-center">
@@ -50,9 +50,6 @@ function IndexPage({ products, categories, merchant }) {
 
               <div>
                 <div>
-                <div className="text-lg md:text-l lg:text-2xl">
-                  {merchant.business_description}
-              </div>
 
               <h1 className="text-lg md:text-xl lg:text-4xl">kategorier:</h1>
                   <CategoryList categories={categories} />

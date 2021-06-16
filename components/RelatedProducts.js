@@ -6,7 +6,7 @@ function RelatedProducts({ products }) {
   return (
     <div>
       <h3 className="w-1/3 md:w-full leading-tight md:leading-normal text-xl md:text-3xl">
-        Andre proukter vi tror du liker:
+        Andre proukter vi tror du vil like:
       </h3>
 
       <div className="w-full grid grid-cols-2 xl:grid-cols-4 gap-4 md:gap-8 pt-4 md:pt-8">
