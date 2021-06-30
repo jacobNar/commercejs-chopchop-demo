@@ -10,7 +10,7 @@ import CategoryList from "../components/CategoryList";
 
 export async function getStaticProps() {
   const { data: products } = await commerce.products.list({
-    limit: 5,
+    limit: 6,
   });
   const { data: categories } = await commerce.categories.list();
   const merchant = await commerce.merchants.about();

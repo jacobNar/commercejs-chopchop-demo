@@ -178,10 +178,6 @@ function ProductPage({ product }) {
           </div>
         </div>
       </div>
-
-      <div className="py-3 md:py-4 lg:py-8">
-        <RelatedProducts products={relatedProducts} />
-      </div>
     </React.Fragment>
   );
 }
