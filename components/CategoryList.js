@@ -6,7 +6,7 @@ function CategoryList({ categories }) {
     <ul>
     <li key={slug}>
       <Link href={`/kategorier/${slug}`}>
-        <a className="text-lg md:text-xl lg:text-2xl hover:italic">{name}</a>
+        <a className="text-lg md:text-xl lg:text-xl hover:italic">{name}</a>
       </Link>
     </li>
     </ul>

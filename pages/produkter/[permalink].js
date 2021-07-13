@@ -118,7 +118,7 @@ function ProductPage({ product }) {
 
       <div className="md:min-h-screen md:flex md:items-center">
         <div className="flex flex-col-reverse md:flex-row space-y-3 md:space-y-0 md:space-x-10">
-          <div className="md:max-h-screen md:w-1/2 flex flex-col md:flex-row items-end justify-between md:sticky md:top-0">
+          <div className="md:max-h-screen md:w-1/2 flex flex-col md:flex-row items-end justify-between md:sticky md:top-0 bg-gray-300 px-1">
             <div className="hidden md:block">
               <Header />
             </div>

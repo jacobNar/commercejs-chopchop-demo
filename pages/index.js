@@ -26,15 +26,16 @@ export async function getStaticProps() {
 }
 
 function IndexPage({ products, categories, merchant }) {
+
   return (
     <>
       <Head>
         <title>CaravanOutletVest</title>
       </Head>
       <Header />
-      <div className="md:min-h-screen md:flex md:items-center">
-        <div className="flex flex-col md:flex-row space-y-3 md:space-y-2 md:space-x-10">
-          <div className="md:max-h-screen md:w-1/2 flex items-end justify-between md:sticky md:top-0">
+      <div className="md:min-h-screen md:flex md:items-center" >
+        <div className="flex flex-col md:flex-row space-y-3 md:space-y-2 md:space-x-10 pt-16">
+          <div className="md:max-h-screen md:w-1/2 flex justify-between md:sticky md:top-0 pl-1 bg-gray-300">
             <motion.div
               className="md:py-12 hidden md:block md:sticky md:top-1"
               initial={{ opacity: 0, y: 50 }}

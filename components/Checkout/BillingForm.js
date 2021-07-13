@@ -26,6 +26,7 @@ const style = {
 };
 
 function BillingForm() {
+  const { id } = useCheckoutState();
   const [countries, setCountries] = useState();
   const [subdivisions, setSubdivisions] = useState();
   const methods = useFormContext();
@@ -47,7 +48,11 @@ function BillingForm() {
 
   const fetchCountries = async () => {
     try {
+      
       const { countries } = await commerce.services.localeListCountries();
+      // var shippingcs = await commerce.services.localeListShippingCountries(id).then((response) => console.log(response));
+      
+      // debugger
 
       setCountries(countries);
     } catch (err) {

@@ -4,8 +4,8 @@ import CartSummary from "./CartSummary";
 
 function Header() {
   return (
-    <header className="md:absolute md:left-0 md:top-0 w-full z-10">
-      <div className="py-3 lg:py-5 flex items-center">
+    <header className="md:absolute md:left-0 md:top-0 w-full z-10 pl-1 bg-gray-300">
+      <div className="py-3 lg:py-5 flex items-center ">
         <Link href="/">
           <a title="Return to store">Butikk</a>
         </Link>

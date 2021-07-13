@@ -9,6 +9,7 @@ import AddressFields from "./AddressFields";
 import { FormCheckbox as FormRadio, FormError } from "../Form";
 
 function ShippingForm() {
+  
   const { id } = useCheckoutState();
   const { setShippingMethod } = useCheckoutDispatch();
   const [countries, setCountries] = useState();
@@ -41,10 +42,10 @@ function ShippingForm() {
 
   const fetchCountries = async (checkoutId) => {
     try {
-      const { countries } = await commerce.services.localeListShippingCountries(
+      const { countries } = await commerce.services.localeListCountries(
         checkoutId
       );
-
+     
       setCountries(countries);
     } catch (err) {
       // noop

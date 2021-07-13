@@ -4,7 +4,7 @@ function ProductGrid({ products, ...props }) {
   if (!products || products.length === 0) return null;
 
   return (
-    <div className="w-full grid lg:grid-cols-2 gap-4 xl:gap-8">
+    <div className="w-full grid lg:grid-cols-3 gap-4 xl:gap-8 px-1">
       {products.map((product) => (
         <Product key={product.id} {...product} {...props} />
       ))}

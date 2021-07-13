@@ -30,7 +30,7 @@ function Breadcrumbs({ inCart }) {
         <>
           <span className="text-lg md:text-xl">Handlekurv</span>
 
-          {extrafields.length > 0 && (
+          {extrafields?.length > 0 && (
             <>
               <span className="text-lg md:text-xl">&rarr;</span>
               <span className="text-lg md:text-xl">Booking</span>
@@ -45,7 +45,7 @@ function Breadcrumbs({ inCart }) {
       {currentStep === "billing" && (
         <>
           <span className="text-lg md:text-xl">Handlekurv</span>
-          {extrafields.length > 0 && (
+          {extrafields?.length > 0 && (
             <>
               <span className="text-lg md:text-xl">&rarr;</span>
               <span className="text-lg md:text-xl">Booking</span>

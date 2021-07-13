@@ -4,11 +4,12 @@ import React from "react"
 import ProductGrid from "../../components/ProductGrid";
 import Header from "../../components/Header";
 import { motion } from "framer-motion";
+import CategoryList from "../../components/CategoryList";
 
 
 export async function getStaticProps({ params }) {
     const { slug } = params;
-  
+    const {data: categories} = await commerce.categories.list()
     const category = await commerce.categories.retrieve(slug, {
       type: "slug",
     });
@@ -21,6 +22,7 @@ export async function getStaticProps({ params }) {
       props: {
         category,
         products,
+        categories
       },
     };
   }
@@ -29,6 +31,7 @@ export async function getStaticPaths() {
     const {data: categories} = await commerce.categories.list()
 
     return {
+
         paths: categories.map((category) => ({
             params: {
                 slug: category.slug,
@@ -38,14 +41,14 @@ export async function getStaticPaths() {
     }
 }
 
-export default function CategoryPage({ category, products }) {
+export default function CategoryPage({ category, products, categories }) {
     return (
         <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-10">
-          <div className="md:max-h-screen md:w-1/2 flex items-end justify-between md:sticky md:top-0">
+          <div className="md:max-h-screen md:w-1/2 flex items-end justify-between md:sticky md:top-0 bg-gray-300">
             <Header />
-
+            
             <motion.div
-              className="md:py-12 hidden md:block md:sticky md:top-0"
+              className="md:py-12 hidden md:block md:sticky md:top-0 pl-1"
               initial={{ opacity: 0, y: 50 }}
               animate={{
                 opacity: 1,
@@ -56,15 +59,16 @@ export default function CategoryPage({ category, products }) {
               }}
               exit={{ opacity: 0, y: -50 }}
             >
+              <div className="text-lg md:text-l lg:text-2xl">{category.name}</div>
               <div className="text-lg md:text-l lg:text-2xl">
               {category.description}
               </div>
-
+              <CategoryList categories={categories} />
             </motion.div>
           </div>
 
           <motion.div
-            className="md:min-h-screen py-6 md:py-12 flex items-center md:w-1/2 md:z-40"
+            className="md:min-h-screen py-6 md:py-12 flex items-center md:w-1/2 md:z-40 px-1"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -50 }}

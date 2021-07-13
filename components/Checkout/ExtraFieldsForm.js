@@ -15,10 +15,11 @@ import { FormInput, FormCheckbox, FormTextarea } from "../Form";
 // };
 
 function ExtraFieldsForm() {
+  
   const { extrafields } = useCheckoutState();
   const { setCurrentStep, nextStepFrom } = useCheckoutDispatch();
 
-  if (extrafields.length === 0) {
+  if (extrafields?.length === 0) {
     setCurrentStep(nextStepFrom("extrafields"));
     return null;
   }
@@ -53,7 +54,7 @@ function ExtraFieldsForm() {
             to learn or cook below.
           </p>
 
-          {extrafields.map(({ id }) => {
+          {extrafields?.map(({ id }) => {
             const computedFieldName = `extrafields.${id}`;
 
             return (
