@@ -15,10 +15,11 @@ import VariantPicker from "../../components/VariantPicker";
 import ProductImages from "../../components/ProductImages";
 import ProductAttributes from "../../components/ProductAttributes";
 import RelatedProducts from "../../components/RelatedProducts";
-
+debugger
 export async function getStaticProps({ params }) {
+  debugger
   const { permalink } = params;
-
+  console.log(permalink)
   const product = await commerce.products.retrieve(permalink, {
     type: "permalink",
   });
@@ -46,6 +47,7 @@ export async function getStaticPaths() {
 }
 
 function ProductPage({ product }) {
+  debugger
   const { setCart } = useCartDispatch();
   const {
     variant_groups: variantGroups,

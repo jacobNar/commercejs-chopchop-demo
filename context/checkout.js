@@ -13,7 +13,7 @@ const SET_ERROR = "SET_ERROR";
 const RESET = "RESET";
 
 const initialState = {
-  currentStep: "extrafields",
+  currentStep: "shipping",
   processing: false,
   error: null,
 };

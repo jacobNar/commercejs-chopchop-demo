@@ -42,9 +42,7 @@ function ShippingForm() {
 
   const fetchCountries = async (checkoutId) => {
     try {
-      const { countries } = await commerce.services.localeListCountries(
-        checkoutId
-      );
+      const { countries } = await commerce.services.localeListShippingCountries(id)
      
       setCountries(countries);
     } catch (err) {

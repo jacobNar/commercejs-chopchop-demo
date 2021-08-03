@@ -4,6 +4,9 @@ import Header from '../components/Header';
 import Link from 'next/link';
 
 function ErrorPage() {
+  var style = {
+    wdith: '100%'
+  }
     return (
         <>
         <Head>
@@ -11,12 +14,12 @@ function ErrorPage() {
         </Head>
         <Header />
         <div className="md:min-h-screen md:flex md:items-center">
-          <div>
+          <div className="text-center">
             <div className="md:max-h-screen flex items-end justify-between md:sticky md:top-0">
-                <h1 className="text-lg md:text-l lg:text-2xl">Vi kunne ikke finne hva du leter etter</h1>
+                <h1 className="text-lg md:text-l lg:text-2xl" style={style}>Vi kunne ikke finne hva du leter etter</h1>
 
             </div>
-            <Link href="index" className="text-lg md:text-l lg:text-2xl">Tilbake til hjemmesiden</Link>
+            <Link href="index" className="text-lg md:text-l lg:text-2xl ">Tilbake til hjemmesiden</Link>
           </div>
         </div>
       </>
