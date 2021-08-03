@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import cc from "classcat";
-
 function Product({ media, name, permalink, price, className }) {
   const imageClass = cc([
     "relative rounded-lg hover:rounded-none overflow-hidden w-full transition-all",
